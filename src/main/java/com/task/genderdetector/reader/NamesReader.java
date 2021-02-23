@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -15,14 +16,14 @@ import java.util.stream.Stream;
 public class NamesReader {
     public List<String> getMaleNames() throws FileReaderException {
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("files/maleNames.txt").getFile());
+        File file = new File(Objects.requireNonNull(classLoader.getResource("files/male.names")).getFile());
 
         return getList(file);
     }
 
     public List<String> getFemaleNames() throws FileReaderException {
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("files/femaleNames.txt").getFile());
+        File file = new File(Objects.requireNonNull(classLoader.getResource("files/female.names")).getFile());
 
         return getList(file);
     }
