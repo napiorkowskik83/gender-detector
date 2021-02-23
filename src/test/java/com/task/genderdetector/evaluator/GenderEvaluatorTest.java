@@ -3,13 +3,12 @@ package com.task.genderdetector.evaluator;
 import com.task.genderdetector.domain.Gender;
 import com.task.genderdetector.reader.FileReaderException;
 import com.task.genderdetector.reader.NamesReader;
-
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -50,13 +49,8 @@ public class GenderEvaluatorTest {
         //Given
         String name = "Jan Maria Rokita";
 
-        System.out.println(reader);
-
         when(reader.getMaleNames()).thenReturn(maleNames);
         when(reader.getFemaleNames()).thenReturn(femaleNames);
-
-        System.out.println(maleNames);
-        System.out.println(femaleNames);
 
         //When
         String result = evaluator.evaluateGender(false, name);
@@ -70,13 +64,8 @@ public class GenderEvaluatorTest {
         //Given
         String name = "Susan Maria Rokita";
 
-        System.out.println(reader);
-
         when(reader.getMaleNames()).thenReturn(maleNames);
         when(reader.getFemaleNames()).thenReturn(femaleNames);
-
-        System.out.println(maleNames);
-        System.out.println(femaleNames);
 
         //When
         String result = evaluator.evaluateGender(false, name);
@@ -106,8 +95,6 @@ public class GenderEvaluatorTest {
         //Given
         String name = "Jan Maria Paweł Rokita";
 
-        System.out.println(reader);
-
         when(reader.getMaleNames()).thenReturn(maleNames);
         when(reader.getFemaleNames()).thenReturn(femaleNames);
 
@@ -123,13 +110,8 @@ public class GenderEvaluatorTest {
         //Given
         String name = "Grażyna Paweł Maria Krzysztof Rokita";
 
-        System.out.println(reader);
-
         when(reader.getMaleNames()).thenReturn(maleNames);
         when(reader.getFemaleNames()).thenReturn(femaleNames);
-
-        System.out.println(maleNames);
-        System.out.println(femaleNames);
 
         //When
         String result = evaluator.evaluateGender(true, name);
