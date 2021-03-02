@@ -3,17 +3,17 @@ package com.task.genderdetector.controller;
 import com.task.genderdetector.domain.Gender;
 import com.task.genderdetector.evaluator.GenderEvaluator;
 import com.task.genderdetector.reader.NamesReader;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-
 import java.util.Arrays;
 import java.util.List;
+
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(GenderDetectController.class)
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class GenderDetectControllerTest {
 
     private final String INCONCLUSIVE = "INCONCLUSIVE";

@@ -1,21 +1,23 @@
 package com.task.genderdetector.evaluator;
 
+
 import com.task.genderdetector.domain.Gender;
 import com.task.genderdetector.reader.FileReaderException;
 import com.task.genderdetector.reader.NamesReader;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
+
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class GenderEvaluatorTest {
 
     private final String INCONCLUSIVE = "INCONCLUSIVE";
